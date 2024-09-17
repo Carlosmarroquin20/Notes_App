@@ -5,64 +5,101 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     background: linear-gradient(135deg, #cf9aff, #95c0ff);
+    padding: 2rem;
     color: #fff;
-    padding-top: 4%;
-    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
 }
 
-
-.container h1{
+.container h1 {
     display: flex;
     align-items: center;
-    font-size: 35px;
-    font-weight: 600;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.container h1 img{
+.container h1 img {
     width: 60px;
+    margin-right: 10px;
 }
 
-.container button img{
+.container button img {
     width: 25px;
     margin-right: 8px;
 }
 
-.container button{
+.container button {
     display: flex;
     align-items: center;
     background: linear-gradient(#9418fd, #571094);
     color: #fff;
-    font-size: 16px;
+    font-size: 1.2rem;
     outline: 0;
     border: 0;
     border-radius: 40px;
-    padding: 15px 25px;
-    margin: 30px 0 20px;
+    padding: 10px 20px;
+    margin: 20px 0;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+.container button:hover {
+    background: linear-gradient(#571094, #9418fd);
+}
 
-.input-box{
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 20px; /* Espaciado entre notas */
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+.input-box {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    min-height: 150px;
+    padding-top: 100%; /* Mantener la proporción cuadrada */
     background: #fff;
     color: #333;
-    padding: 20px;
-    margin: 20px 0;
-    outline: none;
-    border-radius: 5px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.input-box img{
+.input-box:focus {
+    border-color: #9418fd;
+}
+
+.input-box img {
     width: 25px;
     position: absolute;
     bottom: 15px;
     right: 15px;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.input-box img:hover {
+    transform: scale(1.1);
 }
